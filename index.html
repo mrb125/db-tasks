@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenbanken – Aufgaben</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #111;
+    color: #fff;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    animation: fadeIn .35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-header {
+    padding: 18px 24px 14px;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.85);
+  }
+
+  .card-body {
+    padding: 0 24px 30px;
+    background: rgba(255,255,255,.07);
+  }
+
+  .card-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+
+  .card-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,.9);
+  }
+
+  .card-extra {
+    margin-top: 14px;
+    font-size: .95rem;
+    font-style: italic;
+    color: rgba(255,255,255,.6);
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 12px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,.2);
+    border-radius: 99px;
+    padding: 4px 12px;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  /* color themes */
+  .t1 { background: linear-gradient(135deg, #1565C0, #1976D2); }
+  .t2 { background: linear-gradient(135deg, #E65100, #F57C00); }
+  .t3 { background: linear-gradient(135deg, #6A1B9A, #8E24AA); }
+  .t3b { background: linear-gradient(135deg, #2E7D32, #43A047); }
+  .t4 { background: linear-gradient(135deg, #B71C1C, #E53935); }
+  .t4b { background: linear-gradient(135deg, #37474F, #546E7A); }
+  .th1, .th2, .th3 { background: linear-gradient(135deg, #455A64, #607D8B); }
+
+  /* hidden state */
+  .screen { display: none; }
+  .screen.active { display: flex; flex-direction: column; align-items: center; width: 100%; }
+
+  /* home screen */
+  #home {
+    gap: 16px;
+    text-align: center;
+  }
+  #home h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: rgba(255,255,255,.9);
+  }
+  #home p {
+    font-size: .95rem;
+    color: rgba(255,255,255,.5);
+    max-width: 320px;
+  }
+
+  .nav { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .nav a {
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 99px;
+    padding: 10px 20px;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: background .2s;
+  }
+  .nav a:hover { background: rgba(255,255,255,.2); }
+  .nav a.ext {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.2);
+    font-size: .8rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="home" class="screen active">
+  <h1>🗄️ Datenbanken</h1>
+  <p>Scanne den QR-Code an deiner Station oder wähle direkt:</p>
+  <div class="nav">
+    <a href="#task1">Task 1</a>
+    <a href="#task2">Task 2</a>
+    <a href="#task3">Task 3</a>
+    <a href="#task3b">Task 3b ✦</a>
+    <a href="#task4">Task 4</a>
+    <a href="#task4b">Task 4b ✦</a>
+  </div>
+  <div class="nav">
+    <a href="#hint1" class="ext">Hint 1</a>
+    <a href="#hint2" class="ext">Hint 2</a>
+    <a href="#hint3" class="ext">Hint 3</a>
+  </div>
+</div>
+
+<!-- TASK 1 -->
+<div id="task1" class="screen">
+  <div class="card t1">
+    <div class="card-header">
+      <span class="badge">Task 1 · Einstieg</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Was gehört in eine Liste?"</div>
+      <div class="card-text">
+        Stellt euch vor: Jemand verwaltet Daten für sein Hobby in einer Excel-Tabelle.<br><br>
+        Was könnte in so einer Liste stehen? Schreibt alles an die Wand, was euch einfällt.
+      </div>
+      <div class="card-extra">Denkt an euer Szenario 🎵 / ⚽ / 🛒 – was würde man da speichern wollen?</div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- TASK 2 -->
+<div id="task2" class="screen">
+  <div class="card t2">
+    <div class="card-header">
+      <span class="badge">Task 2 · Hauptexploration</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Fehlersuche"</div>
+      <div class="card-text">
+        Ihr bekommt jetzt eine echte Datentabelle.<br><br>
+        Markiert oder schreibt an die Wand: Was ist hier merkwürdig, falsch oder unpraktisch?<br><br>
+        <strong>Mindestens 5 Dinge.</strong>
+      </div>
+      <div class="card-extra">Die Tabelle liegt auf eurem Tisch.</div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- TASK 3 -->
+<div id="task3" class="screen">
+  <div class="card t3">
+    <div class="card-header">
+      <span class="badge">Task 3 · wenn Task 2 fertig</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Ordnung ins Chaos"</div>
+      <div class="card-text">
+        Sortiert eure Fundstücke: Welche Probleme ähneln sich?<br><br>
+        Bildet Gruppen und gebt jeder Gruppe einen selbst gewählten Namen.
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- TASK 3b -->
+<div id="task3b" class="screen">
+  <div class="card t3b">
+    <div class="card-header">
+      <span class="badge">Task 3b · Extension ✦</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Wie wäre es besser?"</div>
+      <div class="card-text">
+        Zeichnet an die Wand, wie eure Tabelle aussehen sollte, damit die Probleme verschwinden.<br><br>
+        Ihr dürft die Tabelle aufteilen, umbenennen, ergänzen – alles erlaubt.
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- TASK 4 -->
+<div id="task4" class="screen">
+  <div class="card t4">
+    <div class="card-header">
+      <span class="badge">Task 4 · Strukturphase</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Baut es besser"</div>
+      <div class="card-text">
+        Entwerft an der Wand eine verbesserte Version eurer Tabelle.<br><br>
+        Ihr dürft mehrere Tabellen verwenden.<br><br>
+        <strong>Jede Spalte soll genau eine Sache enthalten.</strong>
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- TASK 4b -->
+<div id="task4b" class="screen">
+  <div class="card t4b">
+    <div class="card-header">
+      <span class="badge">Task 4b · Extension ✦</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">„Verbindungen"</div>
+      <div class="card-text">
+        Was verbindet eure Tabellen miteinander?<br><br>
+        Zeichnet Verbindungspfeile und beschriftet sie.
+      </div>
+      <div class="card-extra">Bonusfrage: Wie würde ein Computer wissen, welcher Eintrag in Tabelle A zu welchem in Tabelle B gehört?</div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- HINT 1 -->
+<div id="hint1" class="screen">
+  <div class="card th1">
+    <div class="card-header">
+      <span class="badge">Hint 1 · nur wenn ihr wirklich feststeckt</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Hinweis: Doppeltes</div>
+      <div class="card-text">
+        Kommt irgendein Name, eine Zahl oder ein Ort öfter als einmal vor?<br><br>
+        Was passiert, wenn sich das ändert?
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- HINT 2 -->
+<div id="hint2" class="screen">
+  <div class="card th2">
+    <div class="card-header">
+      <span class="badge">Hint 2 · wenn Hint 1 nicht reicht</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Hinweis: Fehlendes</div>
+      <div class="card-text">
+        Was steht in manchen Zellen gar nicht drin?<br><br>
+        Was fehlt dort?
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<!-- HINT 3 -->
+<div id="hint3" class="screen">
+  <div class="card th3">
+    <div class="card-header">
+      <span class="badge">Hint 3 · letzter Ausweg</span>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Hinweis: Zu viel</div>
+      <div class="card-text">
+        Gibt es Zellen, in denen eigentlich zwei verschiedene Informationen stecken?
+      </div>
+    </div>
+  </div>
+  <div class="nav"><a href="#">↩ Zurück</a></div>
+</div>
+
+<script>
+  function route() {
+    const hash = location.hash.slice(1) || 'home';
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    const target = document.getElementById(hash);
+    if (target) target.classList.add('active');
+    else document.getElementById('home').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+</script>
+</body>
+</html>
